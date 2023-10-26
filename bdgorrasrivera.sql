@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2023 a las 21:36:42
+-- Tiempo de generación: 26-10-2023 a las 21:52:33
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 5.6.32
 
@@ -49,10 +49,10 @@ INSERT INTO `login` (`id`, `nombre`, `gmail`, `usuario`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `products`
+-- Estructura de tabla para la tabla `pago`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `pago` (
   `id` int(11) NOT NULL,
   `pais` varchar(100) NOT NULL,
   `id_cliente` int(5) NOT NULL,
@@ -66,12 +66,11 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `products`
+-- Volcado de datos para la tabla `pago`
 --
 
-INSERT INTO `products` (`id`, `pais`, `id_cliente`, `correo`, `num_tarjeta`, `tipo_tarjeta`, `codigo_postal`, `direccion`, `ciudad`, `login_id`) VALUES
-(2, 'Mexico', 1, 'david@gmail.com', 2147483647, 'debito', 32584, 'melon #7207', 'juarez', 1),
-(3, 'Mexico', 1, 'morena', 2147483647, 'debito', 32584, 'del rio 8435', 'Juarez', 7);
+INSERT INTO `pago` (`id`, `pais`, `id_cliente`, `correo`, `num_tarjeta`, `tipo_tarjeta`, `codigo_postal`, `direccion`, `ciudad`, `login_id`) VALUES
+(2, 'Mexico', 1, 'david@gmail.com', 2147483647, 'debito', 32584, 'melon #7207', 'juarez', 1);
 
 --
 -- Índices para tablas volcadas
@@ -84,9 +83,9 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `products`
+-- Indices de la tabla `pago`
 --
-ALTER TABLE `products`
+ALTER TABLE `pago`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_products_1` (`login_id`);
 
@@ -101,19 +100,19 @@ ALTER TABLE `login`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de la tabla `products`
+-- AUTO_INCREMENT de la tabla `pago`
 --
-ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `pago`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `products`
+-- Filtros para la tabla `pago`
 --
-ALTER TABLE `products`
+ALTER TABLE `pago`
   ADD CONSTRAINT `FK_products_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 

@@ -60,7 +60,7 @@ if(isset($_POST['update']))
 				
 	} else {	
 		//updating the table
-		$result = mysqli_query($mysqli, "UPDATE products SET pais='$pais', id_cliente='$id_cliente', correo='$correo', num_tarjeta='$num_tarjeta', tipo_tarjeta='$tipo_tarjeta', codigo_postal='$codigo_postal', direccion='$direccion', ciudad='$ciudad'   WHERE id=$id");
+		$result = mysqli_query($mysqli, "UPDATE pago SET pais='$pais', id_cliente='$id_cliente', correo='$correo', num_tarjeta='$num_tarjeta', tipo_tarjeta='$tipo_tarjeta', codigo_postal='$codigo_postal', direccion='$direccion', ciudad='$ciudad'   WHERE id=$id");
 		
 		//redirectig to the display page. In our case, it is view.php
 		header("Location: view.php");
@@ -72,7 +72,7 @@ if(isset($_POST['update']))
 $id = $_GET['id'];
 
 //selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM products WHERE id=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM pago WHERE id=$id");
 
 while($res = mysqli_fetch_array($result))
 {

@@ -68,7 +68,7 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty) 
 			
 		//insert data to database	
-		$result = mysqli_query($mysqli, "INSERT INTO products(pais, id_cliente, correo, num_tarjeta, tipo_tarjeta, codigo_postal, direccion, ciudad, login_id) VALUES('$pais','$id_cliente','$correo','$num_tarjeta', '$tipo_tarjeta', '$codigo_postal', '$direccion', '$ciudad', '$loginId')");
+		$result = mysqli_query($mysqli, "INSERT INTO pago(pais, id_cliente, correo, num_tarjeta, tipo_tarjeta, codigo_postal, direccion, ciudad, login_id) VALUES('$pais','$id_cliente','$correo','$num_tarjeta', '$tipo_tarjeta', '$codigo_postal', '$direccion', '$ciudad', '$loginId')");
 		
 		//display success message
 		echo "<font color='green'>

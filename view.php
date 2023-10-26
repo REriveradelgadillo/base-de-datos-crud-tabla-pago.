@@ -11,12 +11,12 @@ if(!isset($_SESSION['valid'])) {
 include_once("connection.php");
 
 //fetching data in descending order (lastest entry first)
-$result = mysqli_query($mysqli, "SELECT * FROM products WHERE login_id=".$_SESSION['id']." ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM pago WHERE login_id=".$_SESSION['id']." ORDER BY id DESC");
 ?>
 
 <html>
 <head>
-	<title>Homepage</title>
+	<title>Inicio</title>
 </head>
 
 <body>
